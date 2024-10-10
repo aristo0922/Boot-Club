@@ -6,7 +6,6 @@ import com.study.techeer.Boot_Club.member.MemberService;
 import com.study.techeer.Boot_Club.member.MemberServiceImpl;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.mockito.internal.matchers.Or;
 
 public class OrderServiceTest {
   MemberService memberService = new MemberServiceImpl();
