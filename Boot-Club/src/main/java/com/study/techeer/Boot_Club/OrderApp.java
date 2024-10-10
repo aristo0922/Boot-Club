@@ -3,16 +3,21 @@ package com.study.techeer.Boot_Club;
 import com.study.techeer.Boot_Club.member.Grade;
 import com.study.techeer.Boot_Club.member.Member;
 import com.study.techeer.Boot_Club.member.MemberService;
-import com.study.techeer.Boot_Club.member.MemberServiceImpl;
 import com.study.techeer.Boot_Club.order.Order;
 import com.study.techeer.Boot_Club.order.OrderService;
-import com.study.techeer.Boot_Club.order.OrderServiceImpl;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class OrderApp {
 
   public static void main(String[] args) {
-    MemberService memberService = new MemberServiceImpl();
-    OrderService orderService = new OrderServiceImpl();
+//    AppConfig appConfig = new AppConfig();
+//    MemberService memberService = appConfig.memberService();
+//    OrderService orderService = appConfig.orderService();
+
+    ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
+    MemberService memberService = applicationContext.getBean("memberService", MemberService.class);
+    OrderService orderService = applicationContext.getBean("orderService", OrderService.class);
 
     Long memberId = 1L;
     Member member = new Member(memberId, "memberA", Grade.VIP);
