@@ -1,10 +1,9 @@
 package com.study.techeer.Boot_Club.member;
 
-public class MemberServiceImpl implements MemberService{
+public class MemberServiceImpl implements MemberService {
 
   private final MemberRepository memberRepository;
-
-  public MemberServiceImpl(MemberRepository memberRepository){
+  public MemberServiceImpl(MemberRepository memberRepository) {
     this.memberRepository = memberRepository;
   }
 
