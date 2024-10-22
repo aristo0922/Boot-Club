@@ -27,5 +27,7 @@ public class ConfigurationSingletonTest {
     System.out.println("memberRepository = " + memberRepository);
 
     Assertions.assertThat(memberRepository1).isSameAs(memberRepository2);
+    Assertions.assertThat(memberRepository1).isSameAs(memberRepository);
+    Assertions.assertThat(memberRepository).isSameAs(memberRepository2);
   }
 }
