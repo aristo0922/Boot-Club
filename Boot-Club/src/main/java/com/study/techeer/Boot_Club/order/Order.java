@@ -10,7 +10,7 @@ public class Order {
     this.memberId = memberId;
     this.itemName = itemName;
     this.itemPrice = itemPrice;
-    this.discountPrice = discountPrice;
+    this.discountPrice = itemPrice - discountPrice;
   }
 
   public int calculatePrice(){
