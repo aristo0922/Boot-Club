@@ -4,7 +4,7 @@ import com.study.techeer.Boot_Club.member.Grade;
 import com.study.techeer.Boot_Club.member.Member;
 import org.springframework.stereotype.Component;
 
-//@Component
+@Component
 public class RateDiscountPolicy implements DiscountPolicy{
 
   private int discountPercent = 10;
