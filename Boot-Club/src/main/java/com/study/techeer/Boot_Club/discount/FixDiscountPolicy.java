@@ -2,6 +2,7 @@ package com.study.techeer.Boot_Club.discount;
 
 import com.study.techeer.Boot_Club.member.Grade;
 import com.study.techeer.Boot_Club.member.Member;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
