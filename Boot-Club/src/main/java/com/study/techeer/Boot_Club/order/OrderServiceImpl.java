@@ -1,5 +1,6 @@
 package com.study.techeer.Boot_Club.order;
 
+import com.study.techeer.Boot_Club.annotation.MainDiscountPolicy;
 import com.study.techeer.Boot_Club.discount.DiscountPolicy;
 import com.study.techeer.Boot_Club.member.Member;
 import com.study.techeer.Boot_Club.member.MemberRepository;
@@ -15,7 +16,7 @@ public class OrderServiceImpl implements OrderService{
 
 
   public OrderServiceImpl(MemberRepository memberRepository,
-      DiscountPolicy discount) {
+      @MainDiscountPolicy DiscountPolicy discount) {
     this.memberRepository = memberRepository;
     this.discount = discount;
   }
