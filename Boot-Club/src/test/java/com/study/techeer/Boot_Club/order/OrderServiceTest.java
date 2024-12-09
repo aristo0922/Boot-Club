@@ -28,4 +28,10 @@ public class OrderServiceTest {
     Assertions.assertThat(order.getDiscountPrice()).isEqualTo(9000);
   }
 
+//  @Test
+//  void fieldInjectionTest(){
+//    OrderService service = new OrderServiceImpl();
+//    orderService.createOrder(1L, "itemA", 1000);
+//  }
+
 }
