@@ -4,19 +4,20 @@ import com.study.techeer.Boot_Club.annotation.MainDiscountPolicy;
 import com.study.techeer.Boot_Club.discount.DiscountPolicy;
 import com.study.techeer.Boot_Club.member.Member;
 import com.study.techeer.Boot_Club.member.MemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
 //@RequiredArgsConstructor
-public class OrderServiceImpl implements OrderService{
+public class OrderServiceImpl implements OrderService {
 
-  private final MemberRepository memberRepository ;
+  private final MemberRepository memberRepository;
   private final DiscountPolicy discount;
 
-
+  @Autowired
   public OrderServiceImpl(MemberRepository memberRepository,
-      @MainDiscountPolicy DiscountPolicy discount) {
+      DiscountPolicy discount) {
     this.memberRepository = memberRepository;
     this.discount = discount;
   }
