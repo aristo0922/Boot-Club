@@ -5,7 +5,7 @@ import jakarta.annotation.PreDestroy;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
 
-public class NetworkClient implements InitializingBean, DisposableBean{
+public class NetworkClient {
 
   private String url;// 접속할 서버 주소
 
@@ -48,17 +48,4 @@ public class NetworkClient implements InitializingBean, DisposableBean{
     disconnect();
   }
 
-  @Override
-  public void afterPropertiesSet() throws Exception {
-    // 의존관계 주입이 끝나면 호출하겠다는 메서드
-    System.out.println("networkClient.after properties set");
-    connect();
-    call("연결 초기화 메시지");
-  }
-
-  @Override
-  public void destroy() throws Exception {
-    System.out.println("networkClinet.destroy");
-    disconnect();
-  }
 }
