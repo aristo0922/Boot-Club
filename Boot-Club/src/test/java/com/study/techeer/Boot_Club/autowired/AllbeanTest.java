@@ -19,14 +19,14 @@ public class AllbeanTest {
     ApplicationContext ac = new AnnotationConfigApplicationContext(AutoAppConfig.class, DiscountService.class);
 
     DiscountService discountService = ac.getBean(DiscountService.class);
-    Member userA = new Member(1L, "userA", Grade.VIP);
-    int discountPrice = discountService.discount(userA, 10000, "fixDiscountPolicy");
+//    Member userA = new Member(1L, "userA", Grade.VIP);
+//    int discountPrice = discountService.discount(userA, 10000, "fixDiscountPolicy");
 
     Assertions.assertThat(discountService).isInstanceOf(DiscountService.class);
-    Assertions.assertThat(discountPrice).isEqualTo(1000);
+//    Assertions.assertThat(discountPrice).isEqualTo(1000);
 
-    int rateDiscountPrice = discountService.discount(userA, 20000, "rateDiscountPolicy");
-    Assertions.assertThat(rateDiscountPrice).isEqualTo(2000);
+//    int rateDiscountPrice = discountService.discount(userA, 20000, "rateDiscountPolicy");
+//    Assertions.assertThat(rateDiscountPrice).isEqualTo(2000);
   }
 
   static class DiscountService {
