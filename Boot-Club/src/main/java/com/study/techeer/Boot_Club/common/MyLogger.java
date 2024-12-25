@@ -4,10 +4,11 @@ import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
 import java.util.UUID;
 import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Component;
 
 @Component
-@Scope(value = "request")
+@Scope(value = "request", proxyMode = ScopedProxyMode.TARGET_CLASS)
 public class MyLogger {
 
   private String uuid;
@@ -24,6 +25,7 @@ public class MyLogger {
   @PostConstruct
   public void init(){
     uuid = UUID.randomUUID().toString(); // 로또 맞을 확률 > 중복 생성될 확률
+    System.out.println();
     System.out.println("[" + uuid +"] reqeust scope bean created: "+ this);
   }
 
