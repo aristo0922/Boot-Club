@@ -1,9 +1,6 @@
 package com.study.techeer.Boot_Club.components;
 
-import org.springframework.stereotype.Service;
 
-
-//@Service
 public class MemberService {
   private MemberRepository memberRepository;
 

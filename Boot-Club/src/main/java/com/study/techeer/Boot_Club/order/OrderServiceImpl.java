@@ -1,12 +1,9 @@
 package com.study.techeer.Boot_Club.order;
 
-import com.study.techeer.Boot_Club.annotation.MainDiscountPolicy;
 import com.study.techeer.Boot_Club.discount.DiscountPolicy;
 import com.study.techeer.Boot_Club.member.Member;
 import com.study.techeer.Boot_Club.member.MemberRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -16,11 +13,6 @@ public class OrderServiceImpl implements OrderService {
   private final MemberRepository memberRepository;
   private final DiscountPolicy discount;
 
-//  @Autowired
-//  public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discount) {
-//    this.memberRepository = memberRepository;
-//    this.discount = discount;
-//  }
 
 
   @Override
@@ -31,7 +23,6 @@ public class OrderServiceImpl implements OrderService {
     return new Order(memberId, itemName, itemPrice, discountPrice);
   }
 
-  // 테스트 용도
   public MemberRepository getMemberRepository() {
     return memberRepository;
   }
